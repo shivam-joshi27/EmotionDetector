@@ -1,16 +1,36 @@
+import os
 import re
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
+# For serverless environments like Vercel, use /tmp for NLTK data
+nltk_data_dir = os.environ.get("NLTK_DATA", "/tmp/nltk_data")
+if not os.path.exists(nltk_data_dir):
+    os.makedirs(nltk_data_dir, exist_ok=True)
+if nltk_data_dir not in nltk.data.path:
+    nltk.data.path.append(nltk_data_dir)
+
 # Lazy loading of NLTK resources
 _lemmatizer = None
 _stop_words = None
 
+def download_nltk_resources():
+    resources = ['wordnet', 'stopwords', 'punkt', 'punkt_tab', 'omw-1.4']
+    for res in resources:
+        try:
+            nltk.data.find(f'corpora/{res}')
+        except LookupError:
+            try:
+                nltk.data.find(f'tokenizers/{res}')
+            except LookupError:
+                nltk.download(res, download_dir=nltk_data_dir, quiet=True)
+
 def get_lemmatizer():
     global _lemmatizer
     if _lemmatizer is None:
+        download_nltk_resources()
         _lemmatizer = WordNetLemmatizer()
     return _lemmatizer
 
