@@ -1,0 +1,143 @@
+{
+  "best_model": "Linear Support Vector Machine",
+  "test_accuracy": 0.9035,
+  "comparison": {
+    "Logistic Regression": {
+      "val_accuracy": 0.898,
+      "test_accuracy": 0.892,
+      "precision": 0.8912,
+      "recall": 0.892,
+      "f1_score": 0.8897
+    },
+    "Multinomial Naive Bayes": {
+      "val_accuracy": 0.8335,
+      "test_accuracy": 0.828,
+      "precision": 0.8336,
+      "recall": 0.828,
+      "f1_score": 0.8178
+    },
+    "Linear Support Vector Machine": {
+      "val_accuracy": 0.914,
+      "test_accuracy": 0.9035,
+      "precision": 0.9034,
+      "recall": 0.9035,
+      "f1_score": 0.9034
+    },
+    "Random Forest": {
+      "val_accuracy": 0.4835,
+      "test_accuracy": 0.483,
+      "precision": 0.7169,
+      "recall": 0.483,
+      "f1_score": 0.3973
+    }
+  },
+  "classification_report": {
+    "Sadness": {
+      "precision": 0.936426116838488,
+      "recall": 0.9380378657487092,
+      "f1-score": 0.937231298366294,
+      "support": 581.0
+    },
+    "Joy": {
+      "precision": 0.9280575539568345,
+      "recall": 0.9280575539568345,
+      "f1-score": 0.9280575539568345,
+      "support": 695.0
+    },
+    "Love": {
+      "precision": 0.7818181818181819,
+      "recall": 0.8113207547169812,
+      "f1-score": 0.7962962962962963,
+      "support": 159.0
+    },
+    "Anger": {
+      "precision": 0.896797153024911,
+      "recall": 0.9163636363636364,
+      "f1-score": 0.9064748201438849,
+      "support": 275.0
+    },
+    "Fear": {
+      "precision": 0.8883720930232558,
+      "recall": 0.8526785714285714,
+      "f1-score": 0.8701594533029613,
+      "support": 224.0
+    },
+    "Surprise": {
+      "precision": 0.7258064516129032,
+      "recall": 0.6818181818181818,
+      "f1-score": 0.703125,
+      "support": 66.0
+    },
+    "accuracy": 0.9035,
+    "macro avg": {
+      "precision": 0.8595462583790958,
+      "recall": 0.8547127606721524,
+      "f1-score": 0.8568907370110451,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 0.9034452282588821,
+      "recall": 0.9035,
+      "f1-score": 0.90337251927068,
+      "support": 2000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      545,
+      10,
+      2,
+      18,
+      6,
+      0
+    ],
+    [
+      6,
+      645,
+      34,
+      1,
+      2,
+      7
+    ],
+    [
+      1,
+      26,
+      129,
+      2,
+      0,
+      1
+    ],
+    [
+      14,
+      5,
+      0,
+      252,
+      4,
+      0
+    ],
+    [
+      14,
+      2,
+      0,
+      8,
+      191,
+      9
+    ],
+    [
+      2,
+      7,
+      0,
+      0,
+      12,
+      45
+    ]
+  ],
+  "labels": [
+    "Sadness",
+    "Joy",
+    "Love",
+    "Anger",
+    "Fear",
+    "Surprise"
+  ]
+}
